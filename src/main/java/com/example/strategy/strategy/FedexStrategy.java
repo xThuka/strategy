@@ -7,12 +7,9 @@ import org.springframework.stereotype.Component;
 
 @Component("Shipping_FEDEX")
 public class FedexStrategy implements ShippingStrategy {
-    //todo pq um AUTOWIRED Aqui nao funciona? Tive que criar um contrutor instanciando
-    private Fedex fedex;
 
-    public FedexStrategy(){
-        fedex = new Fedex();
-    }
+    @Autowired
+    private Fedex fedex;
 
     @Override
     public Double calculaFrete(Double peso) {
